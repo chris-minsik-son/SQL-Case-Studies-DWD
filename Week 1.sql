@@ -40,14 +40,3 @@ SELECT
 FROM dvd_rentals.address
 ORDER BY city_id DESC
 LIMIT 5;
-
-
-
--- RECORD COUNTS & DISTINCT VALUES
-
-/* (1) */
-
-
-
-
-
