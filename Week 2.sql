@@ -72,6 +72,30 @@ ORDER BY frequency DESC
 LIMIT 1;
 
 -- (4) How many single duplicated rows exist when measure = 'blood_pressure' in the health.user_logs? How about the total number of duplicate records in the same table?
+WITH groupby_counts AS (
+  SELECT
+    id,
+    log_date,
+    measure,
+    measure_value,
+    systolic,
+    diastolic,
+    COUNT(*) AS frequency -- Sets all records' frequency to 1
+  FROM health.user_logs
+  WHERE measure = 'blood_pressure'
+  GROUP BY
+    id,
+    log_date,
+    measure,
+    measure_value,
+    systolic,
+    diastolic
+)
+SELECT
+  COUNT(*) as single_duplicate_rows, -- Counts all the records with frquency >= 2
+  SUM(frequency) as total_duplicate_records -- Sums all the frequencies of those record i.e. total
+FROM groupby_counts
+WHERE frequency > 1;
 
 -- (5) What percentage of records measure_value = 0 when measure = 'blood_pressure' in the health.user_logs table? How many records are there also for this same condition?
 
