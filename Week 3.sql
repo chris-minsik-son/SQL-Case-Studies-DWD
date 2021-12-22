@@ -98,8 +98,52 @@ FROM groupby_counts
 WHERE frequency > 1;
 
 -- (5) What percentage of records measure_value = 0 when measure = 'blood_pressure' in the health.user_logs table? How many records are there also for this same condition?
+-- SUM(COUNT(*)) OVER() since we want to add the counts of each measure value for when measure = 'blood_pressure'
+WITH measure_bp AS (
+  SELECT
+    measure_value,
+    COUNT(*) AS bp_count,
+    SUM(COUNT(*)) OVER() AS total_count
+  FROM health.user_logs
+  WHERE measure = 'blood_pressure'
+  GROUP by measure_value
+)
+SELECT
+  measure_value,
+  bp_count,
+  total_count,
+  ROUND(100 * bp_count::NUMERIC / total_count, 2) AS PERCENTAGE
+FROM measure_bp
+WHERE measure_value = 0;
 
 -- (6) What percentage of records are duplicates in the health.user_logs table?
+-- In the case statement below,  subtract 1 from the frequency to count the actual duplicates
+WITH groupby_freq AS (
+  SELECT
+    id,
+    measure,
+    measure_value,
+    systolic,
+    diastolic,
+    COUNT(*) AS frequency
+  FROM health.user_logs
+  GROUP BY
+    id,
+    log_date,
+    measure,
+    measure_value,
+    systolic,
+    diastolic
+)
+SELECT ROUND(100 * SUM(CASE
+                      WHEN frequency > 1
+                      THEN frequency - 1
+                      ELSE 0
+                      END)::NUMERIC / SUM(frequency), 2)
+AS duplicate_percentage
+FROM groupby_freq
+
+
 
 
 
@@ -179,7 +223,6 @@ GROUP BY
     systolic,
     diastolic
 HAVING COUNT(*) > 1
-
 
 WITH duplicate_data AS (
     SELECT
