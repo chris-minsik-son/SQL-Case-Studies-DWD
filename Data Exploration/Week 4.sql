@@ -77,8 +77,15 @@ GROUP BY percentile
 ORDER BY percentile;
 -- ^ ... Configure visualisation on SQLPad with the query above
 
-
-
+-- WIDTH_BUCKET() function for bucketing data
+-- 0 < Range < 200, 50 bins, column is measure_value
+SELECT
+    WIDTH_BUCKET(measure_value, 0, 200, 50) AS bucket,
+    AVG(measure_value) AS measure_value,
+    COUNT(*) AS frequency
+FROM clean_weight_logs
+GROUP BY bucket
+ORDER BY bucket;
 
 
 
