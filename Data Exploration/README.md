@@ -1,5 +1,7 @@
 # Health Analytics Mini Case Study
 [![View My Profile](https://img.shields.io/badge/View-My_Profile-white?logo=GitHub)](https://github.com/chris-minsik-son)
+[![View Repositories](https://img.shields.io/badge/View-My_Repositories-white?logo=GitHub)](https://github.com/chris-minsik-son?tab=repositories)
+
 ## Problem Statement
 We’ve just received an urgent request from the General Manager of Analytics at Health Co requesting our assistance with their analysis of the health.user_logs dataset.
 
