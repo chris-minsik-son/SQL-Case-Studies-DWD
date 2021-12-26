@@ -6,9 +6,13 @@
 SELECT
     name,
     category_id
-FROM dvdrentals.category
+FROM dvd_rentals.category
 ORDER BY category_id DESC
 LIMIT 1;
+
+  name  | category_id
+--------+-------------
+ Travel |          16
 
 -- (2) For the films with the longest length, what is the title of the “R” rated film with the lowest replacement_cost in dvd_rentals.film table?
 SELECT
@@ -23,6 +27,10 @@ ORDER BY
     replacement_cost
 LIMIT 1;
 
+   title   | length | replacement_cost | rating
+-----------+--------+------------------+--------
+ HOME PITY |    185 |            15.99 | R
+
 -- (3) Who was the manager of the store with the highest total_sales in the dvd_rentals.sales_by_store table?
 SELECT
     manager,
@@ -32,6 +40,10 @@ FROM dvd_rentals.sales_by_store
 ORDER BY total_sales DESC
 LIMIT 1;
 
+   manager    |        store        | total_sales
+--------------+---------------------+-------------
+ Jon Stephens | Woodridge,Australia |    33726.77
+
 -- (4) What is the postal_code of the city with the 5th highest city_id in the dvd_rentals.address table?
 -- This solution shows 5 top cities -> How to list only the 5th highest?
 SELECT
@@ -40,3 +52,11 @@ SELECT
 FROM dvd_rentals.address
 ORDER BY city_id DESC
 LIMIT 5;
+
+ city_id | postal_code
+---------+-------------
+     600 | 75559
+     599 | 39976
+     598 | 95093
+     597 | 40792
+     596 | 31390
