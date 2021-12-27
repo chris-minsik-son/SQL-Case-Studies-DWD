@@ -3,6 +3,7 @@
 [![View Repositories](https://img.shields.io/badge/View-My_Repositories-white?logo=GitHub)](https://github.com/chris-minsik-son?tab=repositories)
 [![View Main Folder](https://img.shields.io/badge/View-Main_Folder-white?logo=GitHub)](https://github.com/chris-minsik-son/SQL-Code)
 
+<p align="center">
 <img src="/Images/case-study-1.png" width=40% height=40%>
 
 ## Table of Contents
