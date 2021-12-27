@@ -30,7 +30,7 @@ Danny has shared with you 3 key datasets for this case study:
 - members
 
 ### Table 1: Sales
-The sales table captures all customer_id level purchases with an corresponding order_date and product_id information for when and what menu items were ordered.
+The ```sales``` table captures all ```customer_id``` level purchases with an corresponding ```order_date``` and ```product_id``` information for when and what menu items were ordered.
 
 |customer_id|order_date|product_id|
 |-----------|----------|----------|
@@ -51,7 +51,7 @@ The sales table captures all customer_id level purchases with an corresponding o
 |C          |2021-01-07|3         |
 
 ### Table 2: Menu
-The menu table maps the product_id to the actual product_name and price of each menu item.
+The ```menu``` table maps the ```product_id``` to the actual ```product_name``` and ```price``` of each menu item.
 
 |product_id |product_name|price     |
 |-----------|------------|----------|
@@ -60,7 +60,7 @@ The menu table maps the product_id to the actual product_name and price of each 
 |3          |ramen       |12        |
 
 ### Table 3: Members
-The final members table captures the join_date when a customer_id joined the beta version of the Danny’s Diner loyalty program.
+The final ```members table``` captures the ```join_date``` when a ```customer_id``` joined the beta version of the Danny’s Diner loyalty program.
 
 |customer_id|join_date |
 |-----------|----------|
