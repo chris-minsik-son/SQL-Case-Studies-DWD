@@ -82,7 +82,7 @@ The final ```members table``` captures the ```join_date``` when a ```customer_id
 
 ## Solutions
 **1. What is the total amount each customer spent at the restaurant?**
-Solution here:
+
 **2. How many days has each customer visited the restaurant?**
 
 **3. What was the first item from the menu purchased by each customer?**
