@@ -4,7 +4,12 @@
 [![View Main Folder](https://img.shields.io/badge/View-Main_Folder-white?logo=GitHub)](https://github.com/chris-minsik-son/SQL-Code)
 
 ## Table of Contents
-
+- [SQL Case Study 1 - Danny's Diner](#sql-case-study-1---dannys-diner)
+  - [Table of Contents](#table-of-contents)
+  - [Context](#context)
+  - [Problem Statement](#problem-statement)
+  - [Example Dataset](#example-dataset)
+  - [Case Study Questions](#case-study-questions)
 
 ## Context
 
