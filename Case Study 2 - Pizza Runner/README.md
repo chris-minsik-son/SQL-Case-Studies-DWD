@@ -203,7 +203,7 @@ For example: "Meat Lovers: 2xBacon, Beef, ... , Salami"
 - Average speed
 - Total number of pizzas
 
-5. If a Meat Lovers pizza was $12 and Vegetarian $10 fixed prices with no cost for extras and each runner is paid $0.30 per kilometre traveled \- how much money does Pizza Runner have left over after these deliveries?
+5. If a Meat Lovers pizza was $12 and Vegetarian $10 fixed prices with no cost for extras and each runner is paid $0.30 per kilometre traveled, how much money does Pizza Runner have left over after these deliveries?
 
 
 ## Solutions
@@ -253,7 +253,7 @@ For example: "Meat Lovers: 2xBacon, Beef, ... , Salami"
 
 **3. What was the most common exclusion?**
 
-**4. Generate an order item for each record in the customers_orders table in the format of one of the following:**
+**4. Generate an order item for each record in the customers_orders table in the format of one of the following:** <br>
 **- Meat Lovers**
 **- Meat Lovers - Exclude Beef**
 **- Meat Lovers - Extra Bacon**
