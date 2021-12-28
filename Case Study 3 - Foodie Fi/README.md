@@ -22,7 +22,7 @@ Danny finds a few smart friends to launch his new startup Foodie-Fi in 2020 and 
 Danny created Foodie-Fi with a data driven mindset and wanted to ensure all future investment decisions and new features were decided using data. This case study focuses on using subscription style digital data to answer important business questions. <br>
 
 ## Available Data
-Danny has shared the data design for Foodie-Fi and also short descriptions on each of the database tables - our case study focuses on only 2 tables but there will be a challenge to create a new table for the Foodie-Fi team. <br> <br>
+Danny has shared the data design for Foodie-Fi and also short descriptions on each of the database tables - our case study focuses on only 2 tables but there will be a challenge to create a new table for the Foodie-Fi team. <br>
 
 All datasets exist within the foodie_fi database schema - be sure to include this reference within your SQL scripts as you start exploring the data and answering the case study questions.
 
@@ -86,7 +86,7 @@ When customers churn - they will keep their access until the end of their curren
 ## Case Study Questions
 
 ### A. Customer Journey
-Based off the 8 sample customers provided in the sample from the subscriptions table, write a brief description about each customer’s onboarding journey. <br> <br>
+Based off the 8 sample customers provided in the sample from the subscriptions table, write a brief description about each customer’s onboarding journey. <br>
 
 Try to keep it as short as possible - you may also want to run some sort of join to make your explanations a bit easier!
 
@@ -180,7 +180,7 @@ The following are open ended questions which might be asked during a technical i
 ## Solutions
 
 ### A. Customer Journey
-Based off the 8 sample customers provided in the sample from the subscriptions table, write a brief description about each customer’s onboarding journey. <br> <br>
+Based off the 8 sample customers provided in the sample from the subscriptions table, write a brief description about each customer’s onboarding journey. <br>
 
 Try to keep it as short as possible - you may also want to run some sort of join to make your explanations a bit easier!
 
