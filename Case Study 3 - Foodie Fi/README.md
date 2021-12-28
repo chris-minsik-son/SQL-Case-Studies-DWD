@@ -39,7 +39,7 @@ Customers can sign up to an initial 7 day free trial will automatically continue
 When customers cancel their Foodie-Fi service - they will have a churn plan record with a null price but their plan will continue until the end of the billing period.
 
 | plan_id |   plan_name   | price  |
-|---------+---------------+--------|
+|---------|---------------|--------|
 |       0 | trial         |   0.00 |
 |       1 | basic monthly |   9.90 |
 |       2 | pro monthly   |  19.90 |
@@ -50,7 +50,7 @@ When customers cancel their Foodie-Fi service - they will have a churn plan reco
 ### Table 2: subscriptions
 
 | customer_id | plan_id | start_date|
-|-------------+---------+------------|
+|-------------|---------|-----------|
 |           1 |       0 | 2020-08-01|
 |           1 |       1 | 2020-08-08|
 |           2 |       0 | 2020-09-20|
