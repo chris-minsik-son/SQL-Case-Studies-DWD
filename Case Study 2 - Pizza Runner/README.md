@@ -70,7 +70,8 @@ After each orders are received through the system - they are assigned to a runne
 <br> <br>
 
 The ```pickup_time``` is the timestamp at which the runner arrives at the Pizza Runner headquarters to pick up the freshly cooked pizzas. The ```distance``` and ```duration``` fields are related to how far and long the runner had to travel to deliver the order to the respective customer.
-<br>
+<br> <br>
+
 There are some known data issues with this table so be careful when using this in your queries - make sure to check the data types for each column in the ERD!
 
 |order_id|runner_id|pickup_time|distance  |duration|cancellation      |
