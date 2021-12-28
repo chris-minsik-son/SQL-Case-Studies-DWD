@@ -14,11 +14,16 @@
   - [Solutions](#solutions)
 
 ## Introduction
-There is a new innovation in the financial industry called Neo-Banks: new aged digital only banks without physical branches. <br>
-Danny thought that there should be some sort of intersection between these new age banks, cryptocurrency and the data world…so he decides to launch a new initiative - Data Bank! <br>
-Data Bank runs just like any other digital bank - but it isn’t only for banking activities, they also have the world’s most secure distributed data storage platform! <br>
-Customers are allocated cloud data storage limits which are directly linked to how much money they have in their accounts. There are a few interesting caveats that go with this business model, and this is where the Data Bank team need your help! <br>
-The management team at Data Bank want to increase their total customer base - but also need some help tracking just how much data storage their customers will need. <br>
+There is a new innovation in the financial industry called Neo-Banks: new aged digital only banks without physical branches.
+<br>
+Danny thought that there should be some sort of intersection between these new age banks, cryptocurrency and the data world…so he decides to launch a new initiative - Data Bank!
+<br>
+Data Bank runs just like any other digital bank - but it isn’t only for banking activities, they also have the world’s most secure distributed data storage platform!
+<br>
+Customers are allocated cloud data storage limits which are directly linked to how much money they have in their accounts. There are a few interesting caveats that go with this business model, and this is where the Data Bank team need your help!
+<br>
+The management team at Data Bank want to increase their total customer base - but also need some help tracking just how much data storage their customers will need.
+<br>
 This case study is all about calculating metrics, growth and helping the business analyse their data in a smart way to better forecast and plan for their future developments!
 
 ## Available Data
