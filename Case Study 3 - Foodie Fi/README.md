@@ -36,7 +36,7 @@ Pro plan customers have no watch time limits and are able to download videos for
 
 Customers can sign up to an initial 7 day free trial will automatically continue with the pro monthly subscription plan unless they cancel, downgrade to basic or upgrade to an annual pro plan at any point during the trial. <br> <br>
 
-When customers cancel their Foodie-Fi service - they will have a churn plan record with a null price but their plan will continue until the end of the billing period. <br> <br>
+When customers cancel their Foodie-Fi service - they will have a churn plan record with a null price but their plan will continue until the end of the billing period.
 
 | plan_id |   plan_name   | price  |
 |---------+---------------+--------|
