@@ -48,11 +48,11 @@ When customers cancel their Foodie-Fi service - they will have a churn plan reco
 
 
 ### Table 2: subscriptions
-Customer subscriptions show the exact date where their specific ```plan_id``` starts. <br> <br>
+Customer subscriptions show the exact date where their specific ```plan_id``` starts. <br>
 
-If customers downgrade from a pro plan or cancel their subscription - the higher plan will remain in place until the period is over - the ```start_date``` in the ```subscriptions``` table will reflect the date that the actual plan changes. <br> <br>
+If customers downgrade from a pro plan or cancel their subscription - the higher plan will remain in place until the period is over - the ```start_date``` in the ```subscriptions``` table will reflect the date that the actual plan changes. <br>
 
-When customers upgrade their account from a basic plan to a pro or annual pro plan - the higher plan will take effect straightaway. <br> <br>
+When customers upgrade their account from a basic plan to a pro or annual pro plan - the higher plan will take effect straightaway. <br>
 
 When customers churn - they will keep their access until the end of their current billing period but the ```start_date``` will be technically the day they decided to cancel their service.
 
