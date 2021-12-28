@@ -79,6 +79,7 @@ Example outputs for this table might look like the following:
 
 <details>
 <summary>
+
 ```View table```
 </summary>
 
@@ -173,6 +174,7 @@ Example outputs for this table might look like the following:
 
 <details>
 <summary>
+
 ```View table```
 </summary>
 
