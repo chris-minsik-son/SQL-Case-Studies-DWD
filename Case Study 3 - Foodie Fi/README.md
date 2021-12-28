@@ -77,6 +77,11 @@ The Foodie-Fi team wants you to create a new payments table for the year 2020 th
 - once a customer churns they will no longer make payments
 Example outputs for this table might look like the following:
 
+<details>
+<summary>
+```View table```
+</summary>
+
 |customer_id |	plan_id |	plan_name |	payment_date |	amount |	payment_order |
 |------------|----------|-------------|--------------|---------|------------------|
 |1 |	1 |	basic monthly |	2020-08-08 |	9.90 |	1|
@@ -128,6 +133,8 @@ Example outputs for this table might look like the following:
 |39 |	1 |	basic monthly |	2020-08-04 |	9.90 |	3|
 |39 |	2 |	pro monthly  |	2020-08-25 |	10.00 |	4|
 
+</details>
+
 ### D. Outside The Box Questions
 The following are open ended questions which might be asked during a technical interview for this case study - there are no right or wrong answers, but answers that make sense from both a technical and a business perspective make an amazing impression!
 1. How would you calculate the rate of growth for Foodie-Fi?
@@ -166,7 +173,7 @@ Example outputs for this table might look like the following:
 
 <details>
 <summary>
-View table
+```View table```
 </summary>
 
 |customer_id |	plan_id |	plan_name |	payment_date |	amount |	payment_order |
