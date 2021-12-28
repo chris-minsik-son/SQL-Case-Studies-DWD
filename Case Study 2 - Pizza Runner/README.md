@@ -253,7 +253,7 @@ For example: "Meat Lovers: 2xBacon, Beef, ... , Salami"
 
 **3. What was the most common exclusion?**
 
-**4. Generate an order item for each record in the customers_orders table in the format of one of the following:** <br>
+**4. Generate an order item for each record in the customers_orders table in the format of one of the following:**
 - **Meat Lovers**
 - **Meat Lovers - Exclude Beef**
 - **Meat Lovers - Extra Bacon**
