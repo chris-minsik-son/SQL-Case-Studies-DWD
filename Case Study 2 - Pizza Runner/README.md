@@ -14,21 +14,21 @@
   - [Solutions](#solutions)
 
 ## Introduction
-There is a new innovation in the financial industry called Neo-Banks: new aged digital only banks without physical branches.
-<br> <br>
-Danny thought that there should be some sort of intersection between these new age banks, cryptocurrency and the data world…so he decides to launch a new initiative - Data Bank!
-<br> <br>
-Data Bank runs just like any other digital bank - but it isn’t only for banking activities, they also have the world’s most secure distributed data storage platform!
-<br> <br>
-Customers are allocated cloud data storage limits which are directly linked to how much money they have in their accounts. There are a few interesting caveats that go with this business model, and this is where the Data Bank team need your help!
-<br> <br>
-The management team at Data Bank want to increase their total customer base - but also need some help tracking just how much data storage their customers will need.
-<br> <br>
+There is a new innovation in the financial industry called Neo-Banks: new aged digital only banks without physical branches. <br>
+
+Danny thought that there should be some sort of intersection between these new age banks, cryptocurrency and the data world…so he decides to launch a new initiative - Data Bank! <br>
+
+Data Bank runs just like any other digital bank - but it isn’t only for banking activities, they also have the world’s most secure distributed data storage platform! <br>
+
+Customers are allocated cloud data storage limits which are directly linked to how much money they have in their accounts. There are a few interesting caveats that go with this business model, and this is where the Data Bank team need your help! <br>
+
+The management team at Data Bank want to increase their total customer base - but also need some help tracking just how much data storage their customers will need. <br>
+
 This case study is all about calculating metrics, growth and helping the business analyse their data in a smart way to better forecast and plan for their future developments!
 
 ## Available Data
-Because Danny had a few years of experience as a data scientist - he was very aware that data collection was going to be critical for his business’ growth.
-<br> <br>
+Because Danny had a few years of experience as a data scientist - he was very aware that data collection was going to be critical for his business’ growth. <br>
+
 He has prepared for us an entity relationship diagram of his database design but requires further assistance to clean his data and apply some basic calculations so he can better direct his runners and optimise Pizza Runner’s operations.
 
 ### Table 1: runners
@@ -44,7 +44,7 @@ The ```runners``` table shows the ```registration_date``` for each new runner.
 ### Table 2: customer_orders
 Customer pizza orders are captured in the ```customer_orders``` table with 1 row for each individual pizza that is part of the order. <br> <br>
 The pizza_id relates to the type of pizza which was ordered whilst the ```exclusions``` are the ```ingredient_id``` values which should be removed from the pizza and the ```extras``` are the ```ingredient_id``` values which need to be added to the pizza. <br> <br>
-Note that customers can order multiple pizzas in a single order with varying ```exclusions``` and ```extras``` values even if the pizza is the same type! <br> <br>
+Note that customers can order multiple pizzas in a single order with varying ```exclusions``` and ```extras``` values even if the pizza is the same type! <br>
 
 The ```exclusions``` and ```extras``` columns will need to be cleaned up before using them in your queries.
 
@@ -66,11 +66,9 @@ The ```exclusions``` and ```extras``` columns will need to be cleaned up before 
 |10 |104      |1       |2, 6      |1, 4  |44207.77417824074 |
 
 ### Table 3: runner_orders
-After each orders are received through the system - they are assigned to a runner - however not all orders are fully completed and can be cancelled by the restaurant or the customer.
-<br> <br>
+After each orders are received through the system - they are assigned to a runner - however not all orders are fully completed and can be cancelled by the restaurant or the customer. <br>
 
-The ```pickup_time``` is the timestamp at which the runner arrives at the Pizza Runner headquarters to pick up the freshly cooked pizzas. The ```distance``` and ```duration``` fields are related to how far and long the runner had to travel to deliver the order to the respective customer.
-<br> <br>
+The ```pickup_time``` is the timestamp at which the runner arrives at the Pizza Runner headquarters to pick up the freshly cooked pizzas. The ```distance``` and ```duration``` fields are related to how far and long the runner had to travel to deliver the order to the respective customer. <br>
 
 There are some known data issues with this table so be careful when using this in your queries - make sure to check the data types for each column in the ERD!
 
@@ -122,9 +120,12 @@ This table contains all of the ```topping_name``` values with their correspondin
 |12        |Tomato Sauce|
 
 ## Case Study Questions
-This case study has LOTS of questions - they are broken up by area of focus including: * Pizza Metrics * Runner and Customer Experience * Ingredient Optimisation * Pricing and Ratings * Bonus DML Challenges (DML = Data Manipulation Language) <br> <br>
-Each of the following case study questions can be answered using a single SQL statement. <br> <br>
-Again, there are many questions in this case study - please feel free to pick and choose which ones you’d like to try! <br> <br>
+This case study has LOTS of questions - they are broken up by area of focus including: * Pizza Metrics * Runner and Customer Experience * Ingredient Optimisation * Pricing and Ratings * Bonus DML Challenges (DML = Data Manipulation Language) <br>
+
+Each of the following case study questions can be answered using a single SQL statement. <br>
+
+Again, there are many questions in this case study - please feel free to pick and choose which ones you’d like to try! <br>
+
 Before you start writing your SQL queries however - you might want to investigate the data, you may want to do something with some of those ```null``` values and data types in the ```customer_orders``` and ```runner_orders``` tables!
 
 ### A. Pizza Metrics
