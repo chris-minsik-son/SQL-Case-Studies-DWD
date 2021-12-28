@@ -79,8 +79,7 @@ Example outputs for this table might look like the following:
 
 <details>
 <summary>
-
-```View table```
+View table
 </summary>
 
 |customer_id |	plan_id |	plan_name |	payment_date |	amount |	payment_order |
@@ -174,8 +173,7 @@ Example outputs for this table might look like the following:
 
 <details>
 <summary>
-
-```View table```
+View table
 </summary>
 
 |customer_id |	plan_id |	plan_name |	payment_date |	amount |	payment_order |
