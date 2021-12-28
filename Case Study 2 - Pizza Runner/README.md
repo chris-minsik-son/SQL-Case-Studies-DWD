@@ -191,7 +191,7 @@ For example: "Meat Lovers: 2xBacon, Beef, ... , Salami"
 
 3. The Pizza Runner team now wants to add an additional ratings system that allows customers to rate their runner, how would you design an additional table for this new dataset - generate a schema for this new table and insert your own data for ratings for each successful customer order between 1 to 5.
 
-4. Using your newly generated table - can you join all of the information together to form a table which has the following information for successful deliveries?
+4. Using your newly generated table - can you join all of the information together to form a table which has the following information for successful deliveries? <br>
 - customer_id
 - order_id
 - runner_id
