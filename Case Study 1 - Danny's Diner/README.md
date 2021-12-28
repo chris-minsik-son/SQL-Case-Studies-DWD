@@ -9,8 +9,9 @@
 ## Table of Contents
   - [Context](#context)
   - [Problem Statement](#problem-statement)
-  - [Example Dataset](#example-dataset)
+  - [Available Data](#available-data)
   - [Case Study Questions](#case-study-questions)
+  - [Solutions](#solutions)
 
 ## Context
 Danny seriously loves Japanese food so in the beginning of 2021, he decides to embark upon a risky venture and opens up a cute little restaurant that sells his 3 favourite foods: sushi, curry and ramen.
@@ -22,7 +23,7 @@ Danny wants to use the data to answer a few simple questions about his customers
 <br>
 He plans on using these insights to help him decide whether he should expand the existing customer loyalty program - additionally he needs help to generate some basic datasets so his team can easily inspect the data without needing to use SQL.
 
-## Example Dataset
+## Available Data
 Danny has provided you with a sample of his overall customer data due to privacy issues - but he hopes that these examples are enough for you to write fully functioning SQL queries to help him answer his questions!
 <br>
 Danny has shared with you 3 key datasets for this case study:
