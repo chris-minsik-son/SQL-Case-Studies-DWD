@@ -86,10 +86,3 @@ SELECT
 FROM clean_weight_logs
 GROUP BY bucket
 ORDER BY bucket;
-
-
-
-
-
-
-
