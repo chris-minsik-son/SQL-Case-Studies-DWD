@@ -1,6 +1,18 @@
 -- Case Study 1 - Danny's Diner Solutions
 
 -- 1. What is the total amount each customer spent at the restaurant?
+WITH temp AS (
+  SELECT
+    s.customer_id,
+    m.price
+  FROM dannys_diner.sales s
+  JOIN dannys_diner.menu m on (s.product_id = m.product_id)
+)
+SELECT
+  customer_id,
+  SUM(price) as amount_spent
+FROM temp
+GROUP BY customer_id;
 
 -- 2. How many days has each customer visited the restaurant?
 
