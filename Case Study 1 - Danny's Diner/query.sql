@@ -73,13 +73,14 @@ SELECT
   COUNT(m.product_id)
 FROM dannys_diner.sales s
 JOIN dannys_diner.menu m on (s.product_id = m.product_id)
-GROUP BY m.product_name;
+GROUP BY m.product_name
+ORDER BY count DESC;
 
  product_name | count
 --------------+-------
  ramen        |     8
- sushi        |     3
  curry        |     4
+ sushi        |     3
 
 
 -- 5. Which item was the most popular for each customer?
