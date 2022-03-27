@@ -3,14 +3,14 @@
 -- 1. What is the total amount each customer spent at the restaurant?
 WITH temp AS (
   SELECT
-    s.customer_id,
-    m.price
-  FROM dannys_diner.sales s
-  JOIN dannys_diner.menu m on (s.product_id = m.product_id)
+    sales.customer_id,
+    menu.price
+  FROM dannys_diner.sales
+  JOIN dannys_diner.menu ON (sales.product_id = menu.product_id)
 )
 SELECT
   customer_id,
-  SUM(price) as amount_spent
+  SUM(price) AS amount_spent
 FROM temp
 GROUP BY customer_id
 ORDER BY customer_id;
@@ -23,36 +23,28 @@ ORDER BY customer_id;
 
 
 -- 2. How many days has each customer visited the restaurant?
-WITH temp AS (
-  SELECT
-    s.customer_id,
-    m.price
-  FROM dannys_diner.sales s
-  JOIN dannys_diner.menu m on (s.product_id = m.product_id)
-)
 SELECT
   customer_id,
-  SUM(price) as amount_spent
-FROM temp
-GROUP BY customer_id
-ORDER BY customer_id;
+  COUNT(distinct order_date) as visits
+FROM dannys_diner.sales
+GROUP BY customer_id;
 
- customer_id | amount_spent
--------------+--------------
- A           |           76
- B           |           74
- C           |           36
-
+ customer_id | visits
+-------------+--------
+ A           |      4
+ B           |      6
+ C           |      2
+ 
 
 -- 3. What was the first item from the menu purchased by each customer?
 WITH temp AS (
   SELECT
-    s.customer_id,
-    m.product_name,
-    s.order_date,
-    ROW_NUMBER() OVER(PARTITION BY s.customer_id ORDER BY s.order_date ASC) AS order_number
-  FROM dannys_diner.sales s
-  JOIN dannys_diner.menu m on (s.product_id = m.product_id)
+    sales.customer_id,
+    menu.product_name,
+    sales.order_date,
+    ROW_NUMBER() OVER(PARTITION BY sales.customer_id ORDER BY sales.order_date ASC) AS order_number
+  FROM dannys_diner.sales
+  JOIN dannys_diner.menu ON (sales.product_id = menu.product_id)
 )
 SELECT
   customer_id,
@@ -69,11 +61,11 @@ WHERE order_number = 1;
 
 -- 4. What is the most purchased item on the menu and how many times was it purchased by all customers?
 SELECT
-  m.product_name,
-  COUNT(m.product_id)
-FROM dannys_diner.sales s
-JOIN dannys_diner.menu m on (s.product_id = m.product_id)
-GROUP BY m.product_name
+  menu.product_name,
+  COUNT(menu.product_id)
+FROM dannys_diner.sales
+JOIN dannys_diner.menu ON (sales.product_id = menu.product_id)
+GROUP BY menu.product_name
 ORDER BY count DESC;
 
  product_name | count
@@ -84,6 +76,31 @@ ORDER BY count DESC;
 
 
 -- 5. Which item was the most popular for each customer?
+WITH temp AS (
+  SELECT
+    sales.customer_id,
+    menu.product_name,
+    COUNT(menu.product_name),
+    RANK() OVER(PARTITION BY sales.customer_id ORDER BY COUNT(menu.product_name) DESC) AS order_rank
+  FROM dannys_diner.sales
+  JOIN dannys_diner.menu ON (sales.product_id = menu.product_id)
+  GROUP BY sales.customer_id, menu.product_name
+  ORDER BY sales.customer_id, order_rank ASC
+)
+SELECT
+  customer_id,
+  product_name AS most_popular
+FROM temp
+WHERE order_rank = 1;
+
+ customer_id | most_popular
+-------------+--------------
+ A           | ramen
+ B           | sushi
+ B           | curry
+ B           | ramen
+ C           | ramen
+
 
 -- 6. Which item was purchased first by the customer after they became a member?
 
