@@ -43,6 +43,26 @@ ORDER BY customer_id;
  C           |           36
 
 -- 3. What was the first item from the menu purchased by each customer?
+WITH temp AS (
+  SELECT
+    s.customer_id,
+    m.product_name,
+    s.order_date,
+    ROW_NUMBER() OVER(PARTITION BY s.customer_id ORDER BY s.order_date ASC) AS order_number
+  FROM dannys_diner.sales s
+  JOIN dannys_diner.menu m on (s.product_id = m.product_id)
+)
+SELECT
+  customer_id,
+  product_name
+FROM temp
+WHERE order_number = 1;
+
+ customer_id | product_name
+-------------+--------------
+ A           | curry
+ B           | curry
+ C           | ramen
 
 -- 4. What is the most purchased item on the menu and how many times was it purchased by all customers?
 
