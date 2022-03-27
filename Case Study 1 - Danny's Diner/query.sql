@@ -21,6 +21,7 @@ ORDER BY customer_id;
  B           |           74
  C           |           36
 
+
 -- 2. How many days has each customer visited the restaurant?
 WITH temp AS (
   SELECT
@@ -41,6 +42,7 @@ ORDER BY customer_id;
  A           |           76
  B           |           74
  C           |           36
+
 
 -- 3. What was the first item from the menu purchased by each customer?
 WITH temp AS (
@@ -64,7 +66,21 @@ WHERE order_number = 1;
  B           | curry
  C           | ramen
 
+
 -- 4. What is the most purchased item on the menu and how many times was it purchased by all customers?
+SELECT
+  m.product_name,
+  COUNT(m.product_id)
+FROM dannys_diner.sales s
+JOIN dannys_diner.menu m on (s.product_id = m.product_id)
+GROUP BY m.product_name;
+
+ product_name | count
+--------------+-------
+ ramen        |     8
+ sushi        |     3
+ curry        |     4
+
 
 -- 5. Which item was the most popular for each customer?
 
