@@ -12,7 +12,14 @@ SELECT
   customer_id,
   SUM(price) as amount_spent
 FROM temp
-GROUP BY customer_id;
+GROUP BY customer_id
+ORDER BY customer_id;
+
+ customer_id | amount_spent
+-------------+--------------
+ A           |           76
+ B           |           74
+ C           |           36
 
 -- 2. How many days has each customer visited the restaurant?
 WITH temp AS (
@@ -26,7 +33,14 @@ SELECT
   customer_id,
   SUM(price) as amount_spent
 FROM temp
-GROUP BY customer_id;
+GROUP BY customer_id
+ORDER BY customer_id;
+
+ customer_id | amount_spent
+-------------+--------------
+ A           |           76
+ B           |           74
+ C           |           36
 
 -- 3. What was the first item from the menu purchased by each customer?
 
