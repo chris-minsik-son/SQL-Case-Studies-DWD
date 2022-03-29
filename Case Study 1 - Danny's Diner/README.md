@@ -114,6 +114,12 @@ FROM dannys_diner.sales
 GROUP BY customer_id;
 ```
 
+| customer_id | visits |
+|-------------|--------|
+| A           |      4 |
+| B           |      6 |
+| C           |      2 |
+
 ---
 
 **3. What was the first item from the menu purchased by each customer?**
@@ -134,6 +140,12 @@ FROM temp
 WHERE order_number = 1;
 ```
 
+| customer_id | product_name |
+|-------------|--------------|
+| A           | curry        |
+| B           | curry        |
+| C           | ramen        |
+
 ---
 
 **4. What is the most purchased item on the menu and how many times was it purchased by all customers?**
@@ -146,6 +158,12 @@ JOIN dannys_diner.menu ON (sales.product_id = menu.product_id)
 GROUP BY menu.product_name
 ORDER BY count DESC;
 ```
+
+| product_name | count |
+|--------------+-------|
+| ramen        |     8 |
+| curry        |     4 |
+| sushi        |     3 |
 
 ---
 
@@ -168,6 +186,14 @@ SELECT
 FROM temp
 WHERE order_rank = 1;
 ```
+
+| customer_id | most_popular |
+|-------------|--------------|
+| A           | ramen        |
+| B           | sushi        |
+| B           | curry        |
+| B           | ramen        |
+| C           | ramen        |
 
 ---
 
@@ -193,6 +219,11 @@ FROM temp
 WHERE order_rank = 1;
 ```
 
+| customer_id | product_name |
+|-------------|--------------|
+| A           | curry        |
+| B           | sushi        |
+
 ---
 
 **7. Which item was purchased just before the customer became a member?**
@@ -217,6 +248,12 @@ FROM temp
 WHERE order_rank = 1;
 ```
 
+| customer_id | product_name |
+|-------------|--------------|
+| A           | sushi        |
+| A           | curry        |
+| B           | sushi        |
+
 ---
 
 **8. What is the total items and amount spent for each member before they became a member?**
@@ -237,10 +274,15 @@ WITH temp AS (
 SELECT
   customer_id,
   COUNT(*) AS total_items,
-  SUM(price)
+  SUM(price) AS amount_spent
 FROM temp
 GROUP BY customer_id;
 ```
+
+| customer_id | total_items | amount_spent |
+|-------------|-------------|--------------|
+| A           |           2 |           25 |
+| B           |           3 |           40 |
 
 ---
 
@@ -266,6 +308,12 @@ SELECT
 FROM temp
 GROUP BY customer_id;
 ```
+
+| customer_id | points |
+|-------------|--------|
+| A           |    860 |
+| B           |    940 |
+| C           |    360 |
 
 ---
 
