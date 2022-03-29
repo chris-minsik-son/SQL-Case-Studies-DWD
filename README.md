@@ -26,33 +26,41 @@ In this course, we explore the following topics
 ---
 
 ## Case Study #1 - Danny's Diner
-
+<p align="center">
+  <img width=40% height=40%" src="/Images/case-study-1.png">
 ---
 
 ## Case Study #2 - Pizza Runner
-
+<p align="center">
+  <img width=40% height=40%" src="/Images/case-study-2.png">
 ---
 
 ## Case Study #3 - Foodie-Fi
-
+<p align="center">
+  <img width=40% height=40%" src="/Images/case-study-3.png">
 ---
 
 ## Case Study #4 - Data Bank
-
+<p align="center">
+  <img width=40% height=40%" src="/Images/case-study-4.png">
 ---
 
 ## Case Study #5 - Data Mart
-
+<p align="center">
+  <img width=40% height=40%" src="/Images/case-study-5.png">
 ---
 
 ## Case Study #6 - Clique Bait
-
+<p align="center">
+  <img width=40% height=40%" src="/Images/case-study-6.png">
 ---
 
 ## Case Study #7 - Balanced Tree
-
+<p align="center">
+  <img width=40% height=40%" src="/Images/case-study-7.png">
 ---
 
 ## Case Study #8 - Fresh Segments
-
+<p align="center">
+  <img width=40% height=40%" src="/Images/case-study-8.png">
 ---
