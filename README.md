@@ -14,9 +14,9 @@ In this course, we explore the following topics
 ---
 
 ## Table of Contents
-  - [🍜 Case Study #1 - Danny's Diner](#case-study-1---dannys-diner)
-  - [🍕 Case Study #2 - Pizza Runner](#case-study-2---pizza-runner)
-  - [🥑 Case Study #3 - Foodie-Fi](#case-study-3---foodie-fi)
+  - [Case Study #1 - Danny's Diner](#case-study-1---dannys-diner)
+  - [Case Study #2 - Pizza Runner](#case-study-2---pizza-runner)
+  - [Case Study #3 - Foodie-Fi](#case-study-3---foodie-fi)
   - [Case Study #4 - Data Bank](#case-study-4---data-bank)
   - [Case Study #5 - Data Mart](#case-study-5---data-mart)
   - [Case Study #6 - Clique Bait](#case-study-6---clique-bait)
@@ -25,7 +25,7 @@ In this course, we explore the following topics
 
 ---
 
-## Case Study #1 - Danny's Diner
+## 🍜 Case Study #1 - Danny's Diner
 <p align="center">
   <img width=40% height=40%" src="/Images/case-study-1.png">
 
@@ -35,7 +35,7 @@ Danny’s Diner is in need of your assistance to help the restaurant stay afloat
 
 ---
 
-## Case Study #2 - Pizza Runner
+## 🍕 Case Study #2 - Pizza Runner
 <p align="center">
   <img width=40% height=40%" src="/Images/case-study-2.png">
 
@@ -47,7 +47,7 @@ Danny started by recruiting “runners” to deliver fresh pizza from Pizza Runn
 
 ---
 
-## Case Study #3 - Foodie-Fi
+## 🥑 Case Study #3 - Foodie-Fi
 <p align="center">
   <img width=40% height=40%" src="/Images/case-study-3.png">
 
@@ -59,7 +59,7 @@ Danny created Foodie-Fi with a data driven mindset and wanted to ensure all futu
 
 ---
 
-## Case Study #4 - Data Bank
+## 📊 Case Study #4 - Data Bank
 <p align="center">
   <img width=40% height=40%" src="/Images/case-study-4.png">
 
@@ -75,7 +75,7 @@ The management team at Data Bank want to increase their total customer base - bu
 
 ---
 
-## Case Study #5 - Data Mart
+## 🛒 Case Study #5 - Data Mart
 <p align="center">
   <img width=40% height=40%" src="/Images/case-study-5.png">
 
@@ -93,7 +93,7 @@ The key business question he wants you to help him answer are the following:
 
 ---
 
-## Case Study #6 - Clique Bait
+## 💼 Case Study #6 - Clique Bait
 <p align="center">
   <img width=40% height=40%" src="/Images/case-study-6.png">
 
@@ -103,7 +103,7 @@ In this case study - you are required to support Danny’s vision and analyse hi
 
 ---
 
-## Case Study #7 - Balanced Tree
+## ⛰️ Case Study #7 - Balanced Tree
 <p align="center">
   <img width=40% height=40%" src="/Images/case-study-7.png">
 
@@ -113,7 +113,7 @@ Danny, the CEO of this trendy fashion company has asked you to assist the team�
 
 ---
 
-## Case Study #8 - Fresh Segments
+## 🍊 Case Study #8 - Fresh Segments
 <p align="center">
   <img width=40% height=40%" src="/Images/case-study-8.png">
 
