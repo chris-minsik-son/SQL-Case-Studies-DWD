@@ -106,19 +106,167 @@ ORDER BY customer_id;
 ---
 
 **2. How many days has each customer visited the restaurant?**
+```sql
+SELECT
+  customer_id,
+  COUNT(distinct order_date) as visits
+FROM dannys_diner.sales
+GROUP BY customer_id;
+```
+
+---
 
 **3. What was the first item from the menu purchased by each customer?**
+```sql
+WITH temp AS (
+  SELECT
+    sales.customer_id,
+    menu.product_name,
+    sales.order_date,
+    ROW_NUMBER() OVER(PARTITION BY sales.customer_id ORDER BY sales.order_date ASC) AS order_number
+  FROM dannys_diner.sales
+  JOIN dannys_diner.menu ON (sales.product_id = menu.product_id)
+)
+SELECT
+  customer_id,
+  product_name
+FROM temp
+WHERE order_number = 1;
+```
+
+---
 
 **4. What is the most purchased item on the menu and how many times was it purchased by all customers?**
+```sql
+SELECT
+  menu.product_name,
+  COUNT(menu.product_id)
+FROM dannys_diner.sales
+JOIN dannys_diner.menu ON (sales.product_id = menu.product_id)
+GROUP BY menu.product_name
+ORDER BY count DESC;
+```
+
+---
 
 **5. Which item was the most popular for each customer?**
+```sql
+WITH temp AS (
+  SELECT
+    sales.customer_id,
+    menu.product_name,
+    COUNT(menu.product_name),
+    RANK() OVER(PARTITION BY sales.customer_id ORDER BY COUNT(menu.product_name) DESC) AS order_rank
+  FROM dannys_diner.sales
+  JOIN dannys_diner.menu ON (sales.product_id = menu.product_id)
+  GROUP BY sales.customer_id, menu.product_name
+  ORDER BY sales.customer_id, order_rank ASC
+)
+SELECT
+  customer_id,
+  product_name AS most_popular
+FROM temp
+WHERE order_rank = 1;
+```
+
+---
 
 **6. Which item was purchased first by the customer after they became a member?**
+```sql
+WITH temp AS (
+  SELECT
+    sales.customer_id,
+    sales.order_date,
+    members.join_date,
+    menu.product_name,
+    RANK() OVER (PARTITION BY sales.customer_id ORDER BY sales.order_date ASC) AS order_rank
+  FROM dannys_diner.sales
+  JOIN dannys_diner.menu ON (sales.product_id = menu.product_id)
+  JOIN dannys_diner.members ON (sales.customer_id = members.customer_id)
+  WHERE sales.order_date >= members.join_date
+  ORDER BY sales.customer_id, sales.order_date
+)
+SELECT
+  customer_id,
+  product_name
+FROM temp
+WHERE order_rank = 1;
+```
+
+---
 
 **7. Which item was purchased just before the customer became a member?**
+```sql
+WITH temp AS (
+  SELECT
+    sales.customer_id,
+    sales.order_date,
+    members.join_date,
+    menu.product_name,
+    RANK() OVER (PARTITION BY sales.customer_id ORDER BY sales.order_date DESC) AS order_rank
+  FROM dannys_diner.sales
+  JOIN dannys_diner.menu ON (sales.product_id = menu.product_id)
+  JOIN dannys_diner.members ON (sales.customer_id = members.customer_id)
+  WHERE sales.order_date < members.join_date
+  ORDER BY sales.customer_id, sales.order_date
+)
+SELECT
+  customer_id,
+  product_name
+FROM temp
+WHERE order_rank = 1;
+```
+
+---
 
 **8. What is the total items and amount spent for each member before they became a member?**
+```sql
+WITH temp AS (
+  SELECT
+    sales.customer_id,
+    sales.order_date,
+    members.join_date,
+    menu.product_name,
+    menu.price
+  FROM dannys_diner.sales
+  JOIN dannys_diner.menu ON (sales.product_id = menu.product_id)
+  JOIN dannys_diner.members ON (sales.customer_id = members.customer_id)
+  WHERE sales.order_date < members.join_date
+  ORDER BY sales.customer_id
+)
+SELECT
+  customer_id,
+  COUNT(*) AS total_items,
+  SUM(price)
+FROM temp
+GROUP BY customer_id;
+```
+
+---
 
 **9. If each $1 spent equates to 10 points and sushi has a 2x points multiplier - how many points would each customer have?**
+```sql
+WITH temp AS (
+  SELECT
+    sales.customer_id,
+    menu.product_name,
+    menu.price
+  FROM dannys_diner.sales
+  JOIN dannys_diner.menu ON (sales.product_id = menu.product_id)
+  ORDER BY customer_id
+)
+SELECT
+  customer_id,
+  SUM(
+    CASE
+      WHEN product_name = 'sushi' THEN 20 * price
+      ELSE 10 * price
+    END
+  ) AS points
+FROM temp
+GROUP BY customer_id;
+```
+
+---
 
 **10. In the first week after a customer joins the program (including their join date) they earn 2x points on all items, not just sushi - how many points do customer A and B have at the end of January?**
