@@ -81,6 +81,27 @@ The final ```members table``` captures the ```join_date``` when a ```customer_id
 
 ## Solutions
 **1. What is the total amount each customer spent at the restaurant?**
+```sql
+WITH temp AS (
+  SELECT
+    sales.customer_id,
+    menu.price
+  FROM dannys_diner.sales
+  JOIN dannys_diner.menu ON (sales.product_id = menu.product_id)
+)
+SELECT
+  customer_id,
+  SUM(price) AS amount_spent
+FROM temp
+GROUP BY customer_id
+ORDER BY customer_id;
+```
+
+ customer_id | amount_spent
+-------------+--------------
+ A           |           76
+ B           |           74
+ C           |           36
 
 **2. How many days has each customer visited the restaurant?**
 
