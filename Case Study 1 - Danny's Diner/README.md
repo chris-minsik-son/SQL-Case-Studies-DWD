@@ -97,6 +97,7 @@ GROUP BY customer_id
 ORDER BY customer_id;
 ```
 
+<p align="center">
 | customer_id | amount_spent |
 |-------------|--------------|
 | A           |           76 |
