@@ -1,4 +1,4 @@
-# SQL Health Analytics Mini Case Study
+# SQL 8-Week Challenge Case Studies
 [🍦 View My Profile](https://github.com/chris-minsik-son)
 [🍰 View Repositories](https://github.com/chris-minsik-son?tab=repositories)
 [🍨 View Main Folder](https://github.com/chris-minsik-son/SQL-Code)
