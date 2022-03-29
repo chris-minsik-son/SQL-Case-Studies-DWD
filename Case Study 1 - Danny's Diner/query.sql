@@ -172,14 +172,14 @@ WITH temp AS (
 SELECT
   customer_id,
   COUNT(*) AS total_items,
-  SUM(price)
+  SUM(price) AS amount_spent
 FROM temp
 GROUP BY customer_id;
 
- customer_id | total_items | sum
--------------+-------------+-----
- A           |           2 |  25
- B           |           3 |  40
+ customer_id | total_items | amount_spent
+-------------+-------------+--------------
+ A           |           2 |           25
+ B           |           3 |           40
 
 
 -- 9. If each $1 spent equates to 10 points and sushi has a 2x points multiplier - how many points would each customer have?
