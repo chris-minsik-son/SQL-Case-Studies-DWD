@@ -116,9 +116,16 @@ WITH temp AS (
   WHERE sales.order_date >= members.join_date
   ORDER BY sales.customer_id, sales.order_date
 )
-SELECT *
+SELECT
+  customer_id,
+  product_name
 FROM temp
 WHERE order_rank = 1;
+
+ customer_id | product_name
+-------------+--------------
+ A           | curry
+ B           | sushi
 
 
 -- 7. Which item was purchased just before the customer became a member?
@@ -135,14 +142,73 @@ WITH temp AS (
   WHERE sales.order_date < members.join_date
   ORDER BY sales.customer_id, sales.order_date
 )
-SELECT *
+SELECT
+  customer_id,
+  product_name
 FROM temp
 WHERE order_rank = 1;
 
+ customer_id | product_name
+-------------+--------------
+ A           | sushi
+ A           | curry
+ B           | sushi
+
 
 -- 8. What is the total items and amount spent for each member before they became a member?
+WITH temp AS (
+  SELECT
+    sales.customer_id,
+    sales.order_date,
+    members.join_date,
+    menu.product_name,
+    menu.price
+  FROM dannys_diner.sales
+  JOIN dannys_diner.menu ON (sales.product_id = menu.product_id)
+  JOIN dannys_diner.members ON (sales.customer_id = members.customer_id)
+  WHERE sales.order_date < members.join_date
+  ORDER BY sales.customer_id
+)
+SELECT
+  customer_id,
+  COUNT(*) AS total_items,
+  SUM(price)
+FROM temp
+GROUP BY customer_id;
+
+ customer_id | total_items | sum
+-------------+-------------+-----
+ A           |           2 |  25
+ B           |           3 |  40
+
 
 -- 9. If each $1 spent equates to 10 points and sushi has a 2x points multiplier - how many points would each customer have?
+WITH temp AS (
+  SELECT
+    sales.customer_id,
+    menu.product_name,
+    menu.price
+  FROM dannys_diner.sales
+  JOIN dannys_diner.menu ON (sales.product_id = menu.product_id)
+  ORDER BY customer_id
+)
+SELECT
+  customer_id,
+  SUM(
+    CASE
+      WHEN product_name = 'sushi' THEN 20 * price
+      ELSE 10 * price
+    END
+  ) AS points
+FROM temp
+GROUP BY customer_id;
+
+ customer_id | points
+-------------+--------
+ A           |    860
+ B           |    940
+ C           |    360
+
 
 -- 10. In the first week after a customer joins the program (including their join date) they earn 2x points on all items, not
 --     just sushi - how many points do customer A and B have at the end of January?
