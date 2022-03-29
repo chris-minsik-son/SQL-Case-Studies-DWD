@@ -1,7 +1,7 @@
 # SQL Case Study 1 - Danny's Diner
-[![View My Profile](https://img.shields.io/badge/View-My_Profile-white?logo=GitHub)](https://github.com/chris-minsik-son)
-[![View Repositories](https://img.shields.io/badge/View-My_Repositories-white?logo=GitHub)](https://github.com/chris-minsik-son?tab=repositories)
-[![View Main Folder](https://img.shields.io/badge/View-Main_Folder-white?logo=GitHub)](https://github.com/chris-minsik-son/SQL-Code)
+[🍦 View My Profile](https://github.com/chris-minsik-son)
+[🍰 View Repositories](https://github.com/chris-minsik-son?tab=repositories)
+[🍨 View Main Folder](https://github.com/chris-minsik-son/SQL-Code)
 
 <p align="center">
 <img src="/Images/case-study-1.png" width=40% height=40%>
