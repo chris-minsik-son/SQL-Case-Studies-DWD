@@ -1,10 +1,7 @@
 # SQL Case Study 3 - Foodie-Fi
-[![View My Profile](https://img.shields.io/badge/View-My_Profile-white?logo=GitHub)](https://github.com/chris-minsik-son)
-[![View Repositories](https://img.shields.io/badge/View-My_Repositories-white?logo=GitHub)](https://github.com/chris-minsik-son?tab=repositories)
-[![View Main Folder](https://img.shields.io/badge/View-Main_Folder-white?logo=GitHub)](https://github.com/chris-minsik-son/SQL-Code)
-
-<p align="center">
-<img src="/Images/case-study-3.png" width=40% height=40%>
+[🍦 View My Profile](https://github.com/chris-minsik-son)
+[🍰 View Repositories](https://github.com/chris-minsik-son?tab=repositories)
+[🍨 View Main Folder](https://github.com/chris-minsik-son/SQL-Code)
 
 ## Table of Contents
   - [Introduction](#introduction)
@@ -13,6 +10,8 @@
   - [Case Study Questions](#case-study-questions)
   - [Solutions](#solutions)
 
+<p align="center">
+<img src="/Images/case-study-3.png" width=40% height=40%>
 
 ## Introduction
 Subscription based businesses are super popular and Danny realised that there was a large gap in the market - he wanted to create a new streaming service that only had food related content - something like Netflix but with only cooking shows! <br>
