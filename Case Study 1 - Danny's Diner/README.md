@@ -103,6 +103,8 @@ ORDER BY customer_id;
 | B           |           74 |
 | C           |           36 |
 
+---
+
 **2. How many days has each customer visited the restaurant?**
 
 **3. What was the first item from the menu purchased by each customer?**
