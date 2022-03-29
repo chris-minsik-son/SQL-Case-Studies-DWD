@@ -1,7 +1,7 @@
 # SQL Health Analytics Mini Case Study
 [🍦 View My Profile](https://github.com/chris-minsik-son)
-[![View Repositories](https://img.shields.io/badge/View-My_Repositories-white?logo=GitHub)](https://github.com/chris-minsik-son?tab=repositories)
-[![View Main Folder](https://img.shields.io/badge/View-Main_Folder-white?logo=GitHub)](https://github.com/chris-minsik-son/SQL-Code)
+[🍰 View Repositories](https://github.com/chris-minsik-son?tab=repositories)
+[🍨 View Main Folder](https://github.com/chris-minsik-son/SQL-Code)
 
 This repository contains all case study and exercise solutions from the Data With Danny 8-Week SQL Challenge.
 
