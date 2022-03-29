@@ -103,8 +103,42 @@ WHERE order_rank = 1;
 
 
 -- 6. Which item was purchased first by the customer after they became a member?
+WITH temp AS (
+  SELECT
+    sales.customer_id,
+    sales.order_date,
+    members.join_date,
+    menu.product_name,
+    RANK() OVER (PARTITION BY sales.customer_id ORDER BY sales.order_date ASC) AS order_rank
+  FROM dannys_diner.sales
+  JOIN dannys_diner.menu ON (sales.product_id = menu.product_id)
+  JOIN dannys_diner.members ON (sales.customer_id = members.customer_id)
+  WHERE sales.order_date >= members.join_date
+  ORDER BY sales.customer_id, sales.order_date
+)
+SELECT *
+FROM temp
+WHERE order_rank = 1;
+
 
 -- 7. Which item was purchased just before the customer became a member?
+WITH temp AS (
+  SELECT
+    sales.customer_id,
+    sales.order_date,
+    members.join_date,
+    menu.product_name,
+    RANK() OVER (PARTITION BY sales.customer_id ORDER BY sales.order_date DESC) AS order_rank
+  FROM dannys_diner.sales
+  JOIN dannys_diner.menu ON (sales.product_id = menu.product_id)
+  JOIN dannys_diner.members ON (sales.customer_id = members.customer_id)
+  WHERE sales.order_date < members.join_date
+  ORDER BY sales.customer_id, sales.order_date
+)
+SELECT *
+FROM temp
+WHERE order_rank = 1;
+
 
 -- 8. What is the total items and amount spent for each member before they became a member?
 
