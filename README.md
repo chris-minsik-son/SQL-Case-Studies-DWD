@@ -14,8 +14,6 @@ In this course, we explore the following topics
 ---
 
 ## Table of Contents
-- [SQL Health Analytics Mini Case Study](#sql-health-analytics-mini-case-study)
-  - [Table of Contents](#table-of-contents)
   - [Case Study #1 - Danny's Diner](#case-study-1---dannys-diner)
   - [Case Study #2 - Pizza Runner](#case-study-2---pizza-runner)
   - [Case Study #3 - Foodie-Fi](#case-study-3---foodie-fi)
