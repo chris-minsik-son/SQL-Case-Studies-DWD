@@ -1,10 +1,7 @@
 # SQL Case Study 2 - Pizza Runner
-[![View My Profile](https://img.shields.io/badge/View-My_Profile-white?logo=GitHub)](https://github.com/chris-minsik-son)
-[![View Repositories](https://img.shields.io/badge/View-My_Repositories-white?logo=GitHub)](https://github.com/chris-minsik-son?tab=repositories)
-[![View Main Folder](https://img.shields.io/badge/View-Main_Folder-white?logo=GitHub)](https://github.com/chris-minsik-son/SQL-Code)
-
-<p align="center">
-<img src="/Images/case-study-2.png" width=40% height=40%>
+[🍦 View My Profile](https://github.com/chris-minsik-son)
+[🍰 View Repositories](https://github.com/chris-minsik-son?tab=repositories)
+[🍨 View Main Folder](https://github.com/chris-minsik-son/SQL-Code)
 
 ## Table of Contents
   - [Introduction](#introduction)
@@ -12,6 +9,9 @@
   - [Available Data](#available-data)
   - [Case Study Questions](#case-study-questions)
   - [Solutions](#solutions)
+
+<p align="center">
+<img src="/Images/case-study-2.png" width=40% height=40%>
 
 ## Introduction
 There is a new innovation in the financial industry called Neo-Banks: new aged digital only banks without physical branches. <br>
