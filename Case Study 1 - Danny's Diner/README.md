@@ -160,7 +160,7 @@ ORDER BY count DESC;
 ```
 
 | product_name | count |
-|--------------+-------|
+|--------------|-------|
 | ramen        |     8 |
 | curry        |     4 |
 | sushi        |     3 |
