@@ -236,7 +236,7 @@ SELECT
 FROM temp
 GROUP BY customer_id;
 
-| customer_id | total_points |
-|-------------|--------------|
-| A           |         1020 |
-| B           |          560 |
+ customer_id | total_points 
+-------------+--------------
+ A           |         1020 
+ B           |          560 
