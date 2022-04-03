@@ -10,6 +10,12 @@ SELECT COUNT(*) FROM pizza_runner.customer_orders;
 
 
 -- 2. How many unique customer orders were made?
+SELECT COUNT(DISTINCT order_id) FROM pizza_runner.customer_orders;
+
+ count
+-------
+    10
+
 
 -- 3. How many successful orders were delivered by each runner?
 
