@@ -1,7 +1,7 @@
 # SQL 8-Week Challenge Case Studies
 [🍦 View My Profile](https://github.com/chris-minsik-son)
 [🍰 View Repositories](https://github.com/chris-minsik-son?tab=repositories)
-[🍨 View Main Folder](https://github.com/chris-minsik-son/SQL-Code)
+[🍨 View Main Folder](https://github.com/chris-minsik-son/Serious-SQL)
 
 This repository contains all case study solutions from the Data With Danny 8-Week SQL Challenge.
 
