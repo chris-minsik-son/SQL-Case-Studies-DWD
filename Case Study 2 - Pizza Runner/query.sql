@@ -2,6 +2,12 @@
 
 -- A. Pizza Metrics
 -- 1. How many pizzas were ordered?
+SELECT COUNT(*) FROM pizza_runner.customer_orders;
+
+ count
+-------
+    14
+
 
 -- 2. How many unique customer orders were made?
 
