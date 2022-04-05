@@ -5,7 +5,6 @@
 
 ## Table of Contents
   - [Introduction](#introduction)
-  - [Problem Statement](#problem-statement)
   - [Available Data](#available-data)
   - [Case Study Questions](#case-study-questions)
   - [Solutions](#solutions)
