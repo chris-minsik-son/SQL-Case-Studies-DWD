@@ -1,5 +1,94 @@
 -- Case Study 2 - Pizza Runner
 
+-- Firstly, we need to investigate the data
+-- Check data types in the customer_orders and runner_orders tables
+
+-- TABLE 2: customer_orders
+SELECT
+  table_name,
+  column_name,
+  data_type
+FROM information_schema.columns
+WHERE table_name = 'customer_orders';
+
+   table_name    | column_name |          data_type
+-----------------+-------------+-----------------------------
+ customer_orders | order_id    | integer
+ customer_orders | customer_id | integer
+ customer_orders | pizza_id    | integer
+ customer_orders | exclusions  | character varying
+ customer_orders | extras      | character varying
+ customer_orders | order_time  | timestamp without time ZONE
+
+-- TABLE 3: runner_orders
+SELECT
+  table_name,
+  column_name,
+  data_type
+FROM information_schema.columns
+WHERE table_name = 'runner_orders';
+
+  table_name   | column_name  |     data_type
+---------------+--------------+-------------------
+ runner_orders | order_id     | integer
+ runner_orders | runner_id    | integer
+ runner_orders | pickup_time  | character varying
+ runner_orders | distance     | character varying
+ runner_orders | duration     | character varying
+ runner_orders | cancellation | character varying
+
+-- Now, check for null values in the customer_orders and runner_orders tables
+
+-- TABLE 2: customer_orders
+-- We notice that there exists NULL values in the 'exclusions' and 'extras' columns
+DROP TABLE IF EXISTS customer_orders_clean;
+CREATE TABLE customer_order_clean AS (
+    SELECT
+        order_id,
+        customer_id,
+        pizza_id,
+        
+        CASE
+            WHEN exclusions = 'null' THEN ''
+            ELSE exclusions
+        END AS exclusions
+        ,
+
+        CASE
+            WHEN extras = 'null' THEN ''
+            ELSE extras
+        END as extras
+        
+        ,
+        order_time
+    FROM pizza_runner.customer_orders;
+)
+
+-- TABLE 3: runner_orders
+-- We notice that there exists NULL values in the 'pickup_time', 'distance', 'duration' and 'cancellation' columns
+DROP TABLE IF EXISTS runner_orders_clean;
+CREATE TABLE runner_orders_clean AS (
+    SELECT
+        order_id,
+        runner_id,
+        
+        CASE
+            WHEN pickup_time = 'null' THEN ''
+            ELSE pickup_time
+        END as pickup_time
+
+        ,
+        distance, -- FIX
+        duration, -- FIX
+
+        CASE
+            WHEN cancellation = 'null' THEN ''
+            ELSE cancellation
+        END as cancellation
+    FROM pizza_runner.runner_orders;
+)
+
+
 -- A. Pizza Metrics
 -- 1. How many pizzas were ordered?
 SELECT COUNT(*) FROM pizza_runner.customer_orders;
