@@ -49,13 +49,16 @@ CREATE TABLE customer_orders_clean AS (
         pizza_id,
         
         CASE
-            WHEN exclusions = 'null' THEN ''
+            WHEN exclusions = 'null' THEN NULL
+            WHEN exclusions = '' THEN NULL
             ELSE exclusions
         END AS exclusions
         ,
 
         CASE
-            WHEN extras = 'null' THEN ''
+            WHEN extras = 'null' THEN NULL
+            WHEN extras = '' THEN NULL
+            WHEN extras = 'NaN' THEN NULL
             ELSE extras
         END as extras
         
@@ -128,7 +131,21 @@ ORDER BY runner_id;
          3 |                 1
 
 -- 4. How many of each type of pizza was delivered?
+SELECT
+    pizza_name,
+    COUNT(*)
+FROM customer_orders_clean c
+JOIN runner_orders_clean r ON (c.order_id = r.order_id)
+JOIN pizza_runner.pizza_names p ON (c.pizza_id = p.pizza_id)
+WHERE r.cancellation is NULL
+GROUP BY pizza_name;
 
+ pizza_name | count
+------------+-------
+ Meatlovers |     9
+ Vegetarian |     3
+
+ 
 -- 5. How many Vegetarian and Meatlovers were ordered by each customer?
 
 -- 6. What was the maximum number of pizzas delivered in a single order?
