@@ -145,8 +145,32 @@ GROUP BY pizza_name;
  Meatlovers |     9
  Vegetarian |     3
 
- 
+
 -- 5. How many Vegetarian and Meatlovers were ordered by each customer?
+SELECT
+    customer_id,
+    SUM(
+        CASE
+            WHEN pizza_id = 1 THEN 1 ELSE 0
+        END
+    ) AS meatlovers,
+    SUM(
+        CASE
+            WHEN pizza_id = 2 THEN 1 ELSE 0
+        END
+    ) AS vegetarian
+FROM customer_orders_clean
+GROUP BY customer_id
+ORDER BY customer_id;
+
+ customer_id | meatlovers | vegetarian
+-------------+------------+------------
+         101 |          2 |          1
+         102 |          2 |          1
+         103 |          3 |          1
+         104 |          3 |          0
+         105 |          0 |          1
+
 
 -- 6. What was the maximum number of pizzas delivered in a single order?
 
