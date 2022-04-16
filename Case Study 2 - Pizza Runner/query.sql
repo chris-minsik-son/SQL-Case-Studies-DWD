@@ -42,7 +42,7 @@ WHERE table_name = 'runner_orders';
 -- TABLE 2: customer_orders
 -- We notice that there exists NULL values in the 'exclusions' and 'extras' columns
 DROP TABLE IF EXISTS customer_orders_clean;
-CREATE TABLE customer_order_clean AS (
+CREATE TABLE customer_orders_clean AS (
     SELECT
         order_id,
         customer_id,
@@ -61,8 +61,8 @@ CREATE TABLE customer_order_clean AS (
         
         ,
         order_time
-    FROM pizza_runner.customer_orders;
-)
+    FROM pizza_runner.customer_orders
+);
 
 -- TABLE 3: runner_orders
 -- We notice that there exists NULL values in the 'pickup_time', 'distance', 'duration' and 'cancellation' columns
@@ -73,25 +73,30 @@ CREATE TABLE runner_orders_clean AS (
         runner_id,
         
         CASE
-            WHEN pickup_time = 'null' THEN ''
+            WHEN pickup_time = 'null' THEN NULL
             ELSE pickup_time
         END as pickup_time
 
         ,
-        distance, -- FIX
-        duration, -- FIX
+        -- NULLIF() returns NULL if two expressions are equal, otherwise it returns the first expression.
+        -- Syntax for REGEXP_REPLACE(source, pattern, replacement_string,[, flags])
+        -- 'g' instructs the function to remove all alphabets, not just the first one
+
+        NULLIF(regexp_replace(distance, '[^0-9.]', '', 'g'), ''):: NUMERIC AS distance,
+        NULLIF(regexp_replace(duration, '[^0-9.]', '', 'g'), ''):: NUMERIC AS duration,
 
         CASE
-            WHEN cancellation = 'null' THEN ''
+            WHEN cancellation IN ('null', 'NaN', '') THEN NULL
             ELSE cancellation
-        END as cancellation
-    FROM pizza_runner.runner_orders;
-)
+        END AS cancellation
+    FROM pizza_runner.runner_orders
+);
 
 
 -- A. Pizza Metrics
 -- 1. How many pizzas were ordered?
-SELECT COUNT(*) FROM pizza_runner.customer_orders;
+SELECT COUNT(*)
+FROM pizza_runner.customer_orders;
 
  count
 -------
@@ -99,7 +104,8 @@ SELECT COUNT(*) FROM pizza_runner.customer_orders;
 
 
 -- 2. How many unique customer orders were made?
-SELECT COUNT(DISTINCT order_id) FROM pizza_runner.customer_orders;
+SELECT COUNT(DISTINCT order_id)
+FROM pizza_runner.customer_orders;
 
  count
 -------
@@ -107,6 +113,19 @@ SELECT COUNT(DISTINCT order_id) FROM pizza_runner.customer_orders;
 
 
 -- 3. How many successful orders were delivered by each runner?
+SELECT
+    runner_id,
+    COUNT(*) AS successful_orders
+FROM runner_orders_clean
+WHERE cancellation is NULL
+GROUP BY runner_id
+ORDER BY runner_id;
+
+ runner_id | successful_orders
+-----------+-------------------
+         1 |                 4
+         2 |                 3
+         3 |                 1
 
 -- 4. How many of each type of pizza was delivered?
 
