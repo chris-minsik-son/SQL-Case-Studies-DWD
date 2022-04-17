@@ -173,6 +173,18 @@ ORDER BY customer_id;
 
 
 -- 6. What was the maximum number of pizzas delivered in a single order?
+SELECT
+    order_id,
+    COUNT(*) AS pizzas_ordered
+FROM customer_orders_clean
+GROUP BY order_id
+ORDER BY pizzas_ordered DESC
+LIMIT 1;
+
+ order_id | pizzas_ordered
+----------+----------------
+        4 |              3
+
 
 -- 7. For each customer, how many delivered pizzas had at least 1 change and how many had no changes?
 
