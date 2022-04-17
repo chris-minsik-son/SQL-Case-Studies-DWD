@@ -187,12 +187,78 @@ LIMIT 1;
 
 
 -- 7. For each customer, how many delivered pizzas had at least 1 change and how many had no changes?
+SELECT
+    customer_id,
+    SUM(
+        CASE
+            WHEN exclusions IS NOT NULL THEN 1
+            WHEN extras IS NOT NULL THEN 1
+            ELSE 0
+        END
+    ) AS changes_made,
+    SUM(
+        CASE
+            WHEN exclusions IS NULL AND extras IS NULL THEN 1
+            ELSE 0
+        END
+    ) AS no_changes
+FROM customer_orders_clean
+GROUP BY customer_id
+ORDER BY customer_id;
+
+ customer_id | changes_made | no_changes
+-------------+--------------+------------
+         101 |            0 |          3
+         102 |            0 |          3
+         103 |            4 |          0
+         104 |            2 |          1
+         105 |            1 |          0
+
 
 -- 8. How many pizzas were delivered that had both exclusions and extras?
+SELECT
+    SUM(
+        CASE
+            WHEN c.exclusions IS NOT NULL AND c.extras IS NOT NULL THEN 1
+            ELSE 0
+        END
+    ) AS exclusions_and_extras
+FROM customer_orders_clean c
+JOIN runner_orders_clean r ON (c.order_id = r.order_id)
+WHERE r.cancellation IS NULL;
+
+ exclusions_and_extras
+-----------------------
+                     1
+
 
 -- 9. What was the total volume of pizzas ordered for each hour of the day?
+SELECT
+    DATE_PART('hour', order_time) AS hour_of_day,
+    COUNT(*) AS pizzas_ordered
+FROM customer_orders_clean
+GROUP BY hour_of_day
+ORDER BY hour_of_day;
+
+ hour_of_day | pizzas_ordered
+-------------+----------------
+          11 |              1
+          13 |              3
+          18 |              3
+          19 |              1
+          21 |              3
+          23 |              3
+
 
 -- 10. What was the volume of orders for each day of the week?
+SELECT
+    DATE_PART('dow', order_time) AS index,
+    TO_CHAR(order_time, 'Dy') AS day_of_week,
+    COUNT(*) AS pizzas_ordered
+FROM customer_orders_clean
+GROUP BY day_of_week, index
+ORDER BY index;
+
 
 -- B. Runner and Customer Experience
 -- 1. How many runners signed up for each 1 week period? (i.e. week starts 2021-01-01)
